@@ -1,0 +1,6 @@
+1.2 - Creación del proyecto y del repositorio
+ - Usaremos vite que es la alternativa a webpack porque vite está más optimizado, es mas rápido, mas ligero
+ - En la terminal (cva: Create Vite App): 
+npx cva ecommerce 
+React
+JavaScript
