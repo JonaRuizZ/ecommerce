@@ -21,8 +21,9 @@
 3) Limpiamos el código de App.jsx y el main.jsx
 
  - Tenemos que crear un repositorio con git.
+
  - En el archivo .gitignore debemos agregar una linea:
  *.lock 
- Significa que no suba los archivos .lock
+ Significa que no suba los archivos .lock porque en ella estan todas las dependencias
  
  - Creamos un archivo README.md (.md = Markdown)
