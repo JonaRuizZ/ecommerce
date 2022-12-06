@@ -1,6 +1,6 @@
 import { API_URL } from "../constants/env";
 
-const App = () => {
+const Home = () => {
   return (
     <>
       <h1>Bienvenidos {API_URL}</h1>
@@ -9,4 +9,4 @@ const App = () => {
   )
 };
 
-export default App;
+export default Home;
