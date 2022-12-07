@@ -1,12 +1,12 @@
+import Logo from "../molecules/Logo";
+import MainMenu from "../molecules/MainMenu";
+
 const MainHeader = () => {
   return (
-    <nav>
-        <ul>
-            <li>Inicio</li>
-            <li>Productos</li>
-            <li>Contáctanos</li>
-        </ul>
-    </nav>
+    <div>
+      <Logo />
+      <MainMenu />
+    </div>
   )
 };
 
