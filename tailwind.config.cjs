@@ -1,9 +1,19 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ['Red Hat Display']
+      },
+      maxWidth: {
+        200: '78rem'
+      },
+      width: {
+        20: '6rem'
+      }
+    },
   },
   plugins: [],
 }

@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.menu-item{
+    @apply font-medium text-gray-200 hover:text-white duration-200
+}
+
+.outlet-item{
+    @apply pt-24 max-w-200 m-auto
+}

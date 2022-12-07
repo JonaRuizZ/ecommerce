@@ -5,7 +5,9 @@ const PublicApp = () => {
     return (
         <>
             <MainHeader />
-            <Outlet />
+            <div className="outlet-item">
+                <Outlet />
+            </div>
         </>
     )
 };
