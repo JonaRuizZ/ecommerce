@@ -1,7 +1,8 @@
 import imgLogo from '../../../imgs/logo.png';
 
-const LoginTemplate = ({ children, title }) => {
+const RegisterTemplate = ({ children, title }) => {
     return (
+        
         <div className="bg-gradient-to-r from-green-400 to-blue-400 h-screen">
             <div className="max-w-200 mx-auto h-full flex items-center justify-center">
                 <div className="w-2/5 bg-gray-200 p-6 rounded-lg border-2 border-gray-300 shadow-lg">
@@ -16,4 +17,4 @@ const LoginTemplate = ({ children, title }) => {
     )
 };
 
-export default LoginTemplate;
+export default RegisterTemplate;

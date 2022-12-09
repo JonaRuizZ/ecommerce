@@ -10,3 +10,19 @@
 .outlet-item{
     @apply pt-24 max-w-200 m-auto
 }
+
+.input-item{
+    @apply py-1 px-3 mb-3 border border-gray-300 shadow-md
+}
+
+.btn-form{
+    @apply bg-blue-400 py-3 rounded-lg hover:bg-blue-500 duration-300 text-white mt-1
+}
+
+.error-form{
+    @apply bg-red-100 pb-2 text-center text-red-500 font-bold m-2
+}
+
+.link-form{
+    @apply text-center pt-2 text-blue-400 hover:text-blue-500 duration-300 font-medium
+}

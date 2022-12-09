@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { API_URL, TOKEN_NAME } from "../../constants/env";
 import { getToken, setToken } from "../../helpers/auth";
 import LoginTemplate from "../templates/LoginTemplate";
@@ -48,21 +48,36 @@ const Login = () => {
     if (localStorage.getItem(TOKEN_NAME)) return <Navigate to="/" />
 
     return (
-        <LoginTemplate>
+        <LoginTemplate title="Iniciar sesión">
             <form onSubmit={handleSubmit} className="flex flex-col max-w-sm mx-auto">
                 <label htmlFor="email">Correo electrónico</label>
-                <input onChange={changeData} className="py-1 px-3 mb-3 border border-gray-300 shadow-md" type="email" name="email" placeholder="Escribe tu correo electrónico" required />
+                <input
+                    onChange={changeData}
+                    className="input-item"
+                    type="email"
+                    name="email"
+                    placeholder="Escribe tu correo electrónico"
+                    required
+                />
                 <label htmlFor="password">Contraseña</label>
-                <input onChange={changeData} className="py-1 px-3 mb-3 border border-gray-300 shadow-md" type="password" name="password" placeholder="Escribe tu contraseña" required />
+                <input
+                    onChange={changeData}
+                    className="input-item"
+                    type="password"
+                    name="password"
+                    placeholder="Escribe tu contraseña"
+                    required
+                />
                 {
-                    error && <p className="pb-2 text-center text-red-500 font-bold">Usuario o contraseña invalida</p>
+                    error && <p className="error-form">Usuario o contraseña invalida</p>
                 }
-                <button type="submit" className="bg-blue-400 py-3 rounded-lg hover:bg-blue-500 duration-300 text-white">
+                <button type="submit" className="btn-form">
                     {
                         cargando ? "Validando datos..." : "Ingresar"
                     }
                 </button>
                 <p className="text-xs text-gray-500">*No compartas tus datos</p>
+                <Link to="/register" className="link-form">¿No tienes cuenta? Registrate</Link>
             </form>
         </LoginTemplate>
     )
