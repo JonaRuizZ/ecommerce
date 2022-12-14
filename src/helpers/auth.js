@@ -1,17 +1,17 @@
 import { TOKEN_NAME } from "../constants/env";
 
 export const getToken = () => {
-    localStorage.getItem(TOKEN_NAME);
+    localStorage.getItem(TOKEN_NAME)
 };
 
 export const setToken = token => {
-    localStorage.setItem(TOKEN_NAME, token);
+    localStorage.setItem(TOKEN_NAME, token)
 };
 
 export const deleteToken = () => {
-    localStorage.removeItem(TOKEN_NAME);
+    localStorage.removeItem(TOKEN_NAME)
 };
 
 export const clearLocal = () => {
-    localStorage.clear();
+    localStorage.clear()
 };

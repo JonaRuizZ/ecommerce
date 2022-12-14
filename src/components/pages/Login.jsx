@@ -10,9 +10,7 @@ const Login = () => {
         email: "",
         password: ""
     });
-
     const [error, setError] = useState();
-
     const [cargando, setCargando] = useState(false);
 
     const changeData = e => {
@@ -77,7 +75,7 @@ const Login = () => {
                     }
                 </button>
                 <p className="text-xs text-gray-500">*No compartas tus datos</p>
-                <Link to="/register" className="link-form">¿No tienes cuenta? Registrate</Link>
+                <Link to="/register" className="link-form">¿No tienes cuenta? Regístrate</Link>
             </form>
         </LoginTemplate>
     )

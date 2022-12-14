@@ -22,24 +22,24 @@ const Register = () => {
     setData({
       ...data,
       [e.target.name]: e.target.value
-    });
+    })
   };
 
   const handleRegister = e => {
     e.preventDefault()
     setCargando(true)
+    axios.post(`${API_URL}/public/users`, data) 
     setError(null)
-    axios.post(`${API_URL}/public/users`, data)
       .then(res => {
         setCargando(false)
         setRegistrado(null)
-        console.log(res.data.messages[0].message)
+        // console.log(res.data.messages[0].message)
         setRegistrado(res.data.messages[0].message)
       })
       .catch(err => {
         setCargando(false)
         setRegistrado(null)
-        console.log(err.response.data.errors[0].message)
+        // console.log(err.response.data.errors[0].message)
         setError(err.response.data.errors[0].message)
       })
   };
@@ -93,7 +93,7 @@ const Register = () => {
             cargando ? "Registrando..." : "Registrar"
           }
         </button>
-        <Link to="/login" className="link-form">¿Ya tienes cuenta? Logeate</Link>
+        <Link to="/login" className="link-form">¿Ya tienes cuenta? Logéate</Link>
       </form>
     </RegisterTemplate>
   )
