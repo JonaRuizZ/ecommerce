@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <>
       <h1 className="text-center text-2xl font-medium">Bienvenidos {API_URL}</h1>
-      <p>Estos cambios están hechos por branch dev</p>
+      <p className="text-center">Bienvenido acá podrás comprar todo lo que necesitas</p>
     </>
   )
 };
