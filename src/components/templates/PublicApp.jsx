@@ -1,10 +1,9 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { TOKEN_NAME } from "../../constants/env";
+// import { TOKEN_NAME } from "../../constants/env";
 import MainHeader from "../organisms/MainHeader";
 
 const PublicApp = () => {
-    if (!localStorage.getItem(TOKEN_NAME)) return <Navigate to="/login" />
-
+    // if (!localStorage.getItem(TOKEN_NAME)) return <Navigate to="/login" />
     return (
         <>
             <MainHeader />
