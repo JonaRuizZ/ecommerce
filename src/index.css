@@ -26,3 +26,14 @@
 .link-form{
     @apply text-center pt-2 text-blue-400 hover:text-blue-500 duration-300 font-medium
 }
+
+/* Loader */
+.spin {
+	animation: rotation infinite 2s ease-out;
+}
+
+@keyframes rotation {
+	to {
+		transform: rotate(2turn);
+	}
+}
