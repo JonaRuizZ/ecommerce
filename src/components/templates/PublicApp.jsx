@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 // import { TOKEN_NAME } from "../../constants/env";
 import MainHeader from "../organisms/MainHeader";
 

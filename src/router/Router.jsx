@@ -5,6 +5,10 @@ import Products from "../components/pages/Products";
 import PublicApp from "../components/templates/PublicApp";
 import Login from "../components/pages/Login";
 import Register from "../components/pages/Register";
+import AdminApp from "../components/templates/AdminApp";
+import HomeAdmin from "../components/pages/admin/HomeAdmin";
+import Form from "../components/pages/admin/products/Form";
+import Table from "../components/pages/admin/products/Table";
 
 const Router = createBrowserRouter([
     {
@@ -29,6 +33,14 @@ const Router = createBrowserRouter([
     {
         path: "/register",
         element: <Register />
+    },
+    {
+        path: "/admin/productos",
+        element: <Table />
+    },
+    {
+        path: "/admin/productos/crear",
+        element: <Form />
     }
 ]);
 
