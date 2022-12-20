@@ -9,6 +9,7 @@ import AdminApp from "../components/templates/AdminApp";
 import HomeAdmin from "../components/pages/admin/HomeAdmin";
 import Form from "../components/pages/admin/products/Form";
 import Table from "../components/pages/admin/products/Table";
+import Sales from "../components/pages/admin/Sales";
 
 const Router = createBrowserRouter([
     {
@@ -35,11 +36,19 @@ const Router = createBrowserRouter([
         element: <Register />
     },
     {
+        path: "/admin/ventas",
+        element: <Sales />
+    },
+    {
         path: "/admin/productos",
         element: <Table />
     },
     {
         path: "/admin/productos/crear",
+        element: <Form />
+    },
+    {
+        path: "/admin/productos/editar/:id",
         element: <Form />
     }
 ]);

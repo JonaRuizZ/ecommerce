@@ -11,31 +11,40 @@ const MainMenu = () => {
                 <li><NavLink to="/" className="menu-item">Inicio</NavLink></li>
                 <li><NavLink to="/productos" className="menu-item">Productos</NavLink></li>
                 <li><NavLink to="/contactanos" className="menu-item">Contáctanos</NavLink></li>
-                <li>
-                    {
-                        !localStorage.getItem(TOKEN_NAME) ? (
+                {
+                    !localStorage.getItem(TOKEN_NAME) ? (
+                        <li>
                             <NavLink
                                 to="/login"
                                 className="menu-item"
                             >
                                 Iniciar sesión
                             </NavLink>
-                        ) : (
-                            <NavLink
-                                onClick={() => {
-                                    deleteToken()
-                                    nav("/")
-                                }}
-                                to="/"
-                                className="menu-item"
-                            >
-                                Cerrar sesión
-                            </NavLink>
-                        )
-                    }
-                </li>
+                        </li>
+                    ) : (
+                        <>
+                            <li>
+                                <NavLink to="/admin/productos" className="menu-item">
+                                    Administrar productos
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    onClick={() => {
+                                        deleteToken()
+                                        nav("/")
+                                    }}
+                                    to="/"
+                                    className="menu-item"
+                                >
+                                    Cerrar sesión
+                                </NavLink>
+                            </li>
+                        </>
+                    )
+                }
             </ul>
-        </nav>
+        </nav >
     )
 };
 
