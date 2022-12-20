@@ -38,32 +38,32 @@ const Table = () => {
             {
                 // Validamos si hay productos con un operador ternario
                 data.length === 0 ? (<tr><td className="col-span-4">No existen productos actualmente</td></tr>) :
-                    <table className="w-2/3 mx-auto">
-                        <thead>
-                            <tr className="text-center h-14 bg-gray-300 border-2 border-black">
-                                <th>Nombre</th>
-                                <th>Precio</th>
-                                <th>Editar</th>
-                                <th>Borrar</th>
-                            </tr>
-                        </thead>
-                        <tbody className="text-center">
-                            {
-                                data.map(prod => (
-                                    <tr key={prod.id} className="border h-14 hover:bg-gray-100 duration-200">
-                                        <td>{formatText(prod.product_name)}</td>
-                                        <td>USD {formatPrice(prod.price)}</td>
-                                        <td>
-                                            <Link className="btn-editar">Editar</Link>
-                                        </td>
-                                        <td>
-                                            <Link className="btn-eliminar" onClick={() => deleteProduct(prod)}>Eliminar</Link>
-                                        </td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </table>
+                <table className="w-2/3 mx-auto">
+                    <thead>
+                        <tr className="text-center h-14 bg-gray-300 border-2 border-black">
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Editar</th>
+                            <th>Borrar</th>
+                        </tr>
+                    </thead>
+                    <tbody className="text-center">
+                        {
+                            data.map(prod => (
+                                <tr key={prod.id} className="border h-14 hover:bg-gray-100 duration-200">
+                                    <td>{formatText(prod.product_name)}</td>
+                                    <td>USD {formatPrice(prod.price)}</td>
+                                    <td>
+                                        <Link to={`/admin/productos/editar/${prod.id}`} className="btn-editar">Editar</Link>
+                                    </td>
+                                    <td>
+                                        <Link className="btn-eliminar" onClick={() => deleteProduct(prod)}>Eliminar</Link>
+                                    </td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
             }
         </div>
     )
