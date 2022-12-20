@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { formatPrice } from "../../helpers/number";
-import { texto } from "../../helpers/text";
+import { formatText } from "../../helpers/text";
 
 const ProductCard = ({ product }) => {
     const { id, product_name, price, images, description } = product
@@ -18,11 +18,11 @@ const ProductCard = ({ product }) => {
             <div className="mb-3">
                 <NavLink to={`productos/${id}`}>
                     <h3 className="font-semibold text-xl tracking-tight">
-                        {texto(product_name)}
+                        {formatText(product_name)}
                     </h3>
                 </NavLink>
                 <p className="text-gray-500">
-                    {texto(description)}
+                    {formatText(description)}
                 </p>
             </div>
             <div>
@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
                     Precio USD: {formatPrice(price)}
                 </span>
             </div>
-        </article >
+        </article>
     )
 };
 

@@ -27,6 +27,14 @@
     @apply text-center pt-2 text-blue-400 hover:text-blue-500 duration-300 font-medium
 }
 
+.btn-eliminar{
+    @apply bg-red-400 py-2 px-5 rounded-md text-white hover:bg-red-300 duration-300
+}
+
+.btn-editar{
+    @apply bg-green-400 py-2 px-5 rounded-md text-white hover:bg-green-300 duration-300
+}
+
 /* Loader */
 .spin {
 	animation: rotation infinite 2s ease-out;
