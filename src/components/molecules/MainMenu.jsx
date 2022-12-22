@@ -1,9 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { deleteToken } from "../../helpers/auth";
 import { TOKEN_NAME } from "../../constants/env";
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react";
 
 const MainMenu = () => {
     const nav = useNavigate();
+    const { userData, setUserData } = useContext(UserContext);
 
     return (
         <nav>
@@ -44,6 +47,7 @@ const MainMenu = () => {
                     )
                 }
             </ul>
+            { JSON.stringify(userData) }
         </nav >
     )
 };
