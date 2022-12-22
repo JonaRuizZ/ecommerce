@@ -44,7 +44,7 @@ const Table = () => {
                             <th>Nombre</th>
                             <th>Precio</th>
                             <th>Editar</th>
-                            <th>Borrar</th>
+                            <th>Eliminar</th>
                         </tr>
                     </thead>
                     <tbody className="text-center">

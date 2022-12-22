@@ -1,6 +1,17 @@
+import { Outlet } from "react-router-dom";
+import AdminMenu from "../molecules/AdminMenu";
+import MainHeader from "../organisms/MainHeader";
+
 const AdminApp = () => {
   return (
-    <div>AdminApp</div>
+    <>
+      <MainHeader>
+        <AdminMenu />
+      </MainHeader>
+      <div className="outlet-item">
+        <Outlet />
+      </div>
+    </>
   )
 };
 
