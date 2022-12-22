@@ -36,20 +36,26 @@ const Router = createBrowserRouter([
         element: <Register />
     },
     {
-        path: "/admin/ventas",
-        element: <Sales />
-    },
-    {
-        path: "/admin/productos",
-        element: <Table />
-    },
-    {
-        path: "/admin/productos/crear",
-        element: <Form />
-    },
-    {
-        path: "/admin/productos/editar/:id",
-        element: <Form />
+        path: "/admin",
+        element: <AdminApp />,
+        children: [
+            {
+                path: "/admin/ventas",
+                element: <Sales />
+            },
+            {
+                path: "/admin/productos",
+                element: <Table />
+            },
+            {
+                path: "/admin/productos/crear",
+                element: <Form />
+            },
+            {
+                path: "/admin/productos/editar/:id",
+                element: <Form />
+            }
+        ]
     }
 ]);
 

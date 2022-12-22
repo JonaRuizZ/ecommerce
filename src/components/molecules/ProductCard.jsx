@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
                     <img
                         className="rounded-lg h-52 object-cover"
                         src={images[0]}
-                        alt={product_name}
+                        alt={formatText(product_name)}
                     />
                 </Link>
             </div>
@@ -27,7 +27,7 @@ const ProductCard = ({ product }) => {
             </div>
             <div>
                 <span className="text-xl font-semibold">
-                    Precio USD: {formatPrice(price)}
+                    {`Precio USD: ${formatPrice(price)}`}
                 </span>
             </div>
         </article>
