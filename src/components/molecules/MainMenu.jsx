@@ -1,9 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { deleteToken } from "../../helpers/auth";
 import { TOKEN_NAME } from "../../constants/env";
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react";
 
 const MainMenu = () => {
     const nav = useNavigate();
+    const { userData, setUserData } = useContext(UserContext);
 
     return (
         <nav>
@@ -23,15 +26,25 @@ const MainMenu = () => {
                         </li>
                     ) : (
                         <>
-                            <li>
-                                <NavLink to="/admin/productos" className="menu-item">
-                                    Administrar productos
-                                </NavLink>
-                            </li>
+                            {
+                                userData?.is_admin && (
+                                    <>
+                                        <li>
+                                            <NavLink to="/admin/productos" className="menu-item">
+                                                Administrar productos
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            Administrador: {userData.details.fullname}
+                                        </li>
+                                    </>
+                                )
+                            }
                             <li>
                                 <NavLink
                                     onClick={() => {
                                         deleteToken()
+                                        setUserData()
                                         nav("/")
                                     }}
                                     to="/"

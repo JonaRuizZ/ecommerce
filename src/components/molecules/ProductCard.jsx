@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
     return (
         <article className="bg-blue-100 w-full shadow-lg p-5 rounded-md">
             <div className="mb-5 overflow-hidden flex justify-center items-center">
-                <Link to={`productos/${id}`}>
+                <Link to={`/productos/${id}`}>
                     <img
                         className="rounded-lg h-52 object-cover"
                         src={images[0]}
@@ -16,12 +16,12 @@ const ProductCard = ({ product }) => {
                 </Link>
             </div>
             <div className="mb-3">
-                <NavLink to={`productos/${id}`}>
+                <NavLink to={`/productos/${id}`}>
                     <h3 className="font-semibold text-xl tracking-tight">
                         {formatText(product_name)}
                     </h3>
                 </NavLink>
-                <p className="text-gray-500">
+                <p className="text-gray-500 overflow-hidden text-ellipsis">
                     {formatText(description)}
                 </p>
             </div>
