@@ -18,7 +18,7 @@ const UserProvider = ({ children }) => {
                 }
             })
             .then(resp => {
-                setUserData(resp.data.data)
+                setUserData(resp.data.data.user)
             })
         }
     }, [])

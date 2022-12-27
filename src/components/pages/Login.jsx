@@ -1,8 +1,10 @@
 import axios from "axios";
+import { useContext } from "react";
 import { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { API_URL, TOKEN_NAME } from "../../constants/env";
-import { getToken, setToken } from "../../helpers/auth";
+import { UserContext } from "../../context/UserContext";
+import { setToken } from "../../helpers/auth";
 import LoginTemplate from "../templates/LoginTemplate";
 
 const Login = () => {
@@ -22,6 +24,7 @@ const Login = () => {
     };
 
     const navigation = useNavigate();
+    const { setUserData } = useContext(UserContext);
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -35,6 +38,7 @@ const Login = () => {
                 // localStorage.setItem(res.data.data.token)
                 // console.log(res.data.data.token)
                 setToken(res.data.data.token)
+                setUserData(res.data.data.user)
                 navigation("/")
             })
             .catch(err => {
@@ -55,6 +59,7 @@ const Login = () => {
                     type="email"
                     name="email"
                     placeholder="Escribe tu correo electrónico"
+                    autoComplete="userName"
                     required
                 />
                 <label htmlFor="password">Contraseña</label>
@@ -64,6 +69,7 @@ const Login = () => {
                     type="password"
                     name="password"
                     placeholder="Escribe tu contraseña"
+                    autoComplete="current-password"
                     required
                 />
                 {

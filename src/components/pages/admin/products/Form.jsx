@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { API_URL } from "../../../../constants/env";
+import { API_URL, TOKEN_NAME } from "../../../../constants/env";
 import { getToken } from "../../../../helpers/auth";
 import Loader from "../../../atoms/Loader";
 
@@ -48,7 +48,7 @@ const Form = () => {
         if (!params.id) {
             axios.post(`${API_URL}/admin/products`, data, {
                 headers: {
-                    Authorization: `Bearer ${getToken()}`
+                    Authorization: `Bearer ${localStorage.getItem(TOKEN_NAME)}`
                 }
             })
                 .then(resp => {
@@ -60,9 +60,9 @@ const Form = () => {
                     setError(err)
                 })
         } else {
-            axios.put(`${API_URL}/public/products/${params.id}`, data, {
+            axios.put(`${API_URL}/admin/products/${params.id}`, data, {
                 headers: {
-                    Authorization: `Bearer ${getToken()}`
+                    Authorization: `Bearer ${localStorage.getItem(TOKEN_NAME)}`
                 }
             })
                 .then(resp => {

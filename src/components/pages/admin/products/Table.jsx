@@ -10,7 +10,7 @@ import Loader from "../../../atoms/Loader";
 const Table = () => {
     const { data, error, loading } = useFetch("public/products")
 
-    const deleteProduct = (product) => {
+    const deleteProduct = product => {
         if (window.confirm(`¿Estás seguro de querer ELIMINAR ${product.product_name}?`))
         axios.delete(`${API_URL}/admin/products/${product.id}`, {
             headers: {

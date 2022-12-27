@@ -26,15 +26,25 @@ const MainMenu = () => {
                         </li>
                     ) : (
                         <>
-                            <li>
-                                <NavLink to="/admin/productos" className="menu-item">
-                                    Administrar productos
-                                </NavLink>
-                            </li>
+                            {
+                                userData?.is_admin && (
+                                    <>
+                                        <li>
+                                            <NavLink to="/admin/productos" className="menu-item">
+                                                Administrar productos
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            Administrador: {userData.details.fullname}
+                                        </li>
+                                    </>
+                                )
+                            }
                             <li>
                                 <NavLink
                                     onClick={() => {
                                         deleteToken()
+                                        setUserData()
                                         nav("/")
                                     }}
                                     to="/"
@@ -47,7 +57,6 @@ const MainMenu = () => {
                     )
                 }
             </ul>
-            { JSON.stringify(userData) }
         </nav >
     )
 };
