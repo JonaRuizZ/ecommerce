@@ -11,7 +11,7 @@ const Products = () => {
         <>
             <article className="max-w-200 m-auto py-5">
                 <h1 className="text-center text-2xl font-medium pb-4">Encuentra lo que andas buscando</h1>
-                <div className="grid grid-cols-4 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {
                         // Validamos si hay productos con un operador ternario
                         data.length === 0 ? (<h1>No existen productos</h1>) :

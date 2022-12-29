@@ -10,6 +10,7 @@ import Form from "../components/pages/admin/products/Form";
 import Table from "../components/pages/admin/products/Table";
 import Sales from "../components/pages/admin/Sales";
 import Product from "../components/pages/Product";
+import Cart from "../components/pages/Cart";
 
 const Router = createBrowserRouter([
     {
@@ -28,7 +29,12 @@ const Router = createBrowserRouter([
             {
                 path: "/productos/:id",
                 element: <Product />
+            },
+            {
+                path: "/carrito",
+                element: <Cart />
             }
+
         ]
     },
     {
