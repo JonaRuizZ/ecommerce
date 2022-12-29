@@ -14,6 +14,7 @@ const MainMenu = () => {
                 <li><NavLink to="/" className="menu-item">Inicio</NavLink></li>
                 <li><NavLink to="/productos" className="menu-item">Productos</NavLink></li>
                 <li><NavLink to="/contactanos" className="menu-item">Contáctanos</NavLink></li>
+                <li><NavLink to="/carrito" className="menu-item">Carrito</NavLink></li>
                 {
                     !localStorage.getItem(TOKEN_NAME) ? (
                         <li>
@@ -35,7 +36,7 @@ const MainMenu = () => {
                                             </NavLink>
                                         </li>
                                         <li>
-                                            Administrador: {userData.details.fullname}
+                                            Administrador: { userData.details.fullname }
                                         </li>
                                     </>
                                 )
